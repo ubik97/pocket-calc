@@ -1,9 +1,31 @@
 .PageText {
   font-family: 'Source Code Pro', monospace;
-  font-weight: bold;
-  font-size: 40px;
+  color: darkcyan;
+}
+
+#calculator {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-style: outset;
+  box-sizing: border-box;
+  width: 250px;
+}
+
+button {
+  margin: 5px;
+}
+
+.num, .ops, #equals {
+  width: 40px;
 }
 
 .num {
-  
+  background-color: cyan;
+}
+
+#outputbox {
+  padding-right: 2px;
+  width: 201.5px;
+  height: 40px;
+  border-style: solid;
 }
