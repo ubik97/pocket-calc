@@ -1,5 +1,5 @@
 html {
-  background-image: url(images/wideskyline.gif);
+  background-image: url(images/new.gif);
   background-size: cover;
 }
 
@@ -8,6 +8,7 @@ html {
   color: #1ADAFB;
   text-shadow: 2px 2px 1px #040F45;
   font-size: 30pt;
+  margin-left: 45px;
 }
 
 #calculator {
@@ -53,13 +54,23 @@ button {
   background-color: #845ED7;
 }
 
-#outputbox {
+.output {
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  font-size: 20px;
   padding-right: 2px;
   width: 201.5px;
   height: 40px;
   border-radius: 6px;
   border-style: ridge;
   background-color: rgba(131,94,215,0.7);
+}
+
+#output {
+  height: 30px;
+  width: 190px;
+  position: absolute;
+  margin: 10px;
 }
 
 .secret {
