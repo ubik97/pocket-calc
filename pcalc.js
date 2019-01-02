@@ -1,52 +1,75 @@
 var input = " ";
 var p = document.getElementById('output')
+var digcount = input.length;
 
 
             //BASIC KEYPAD INPUT FUNCTIONS
 function number1() {
-document.getElementById('output').innerHTML = input + "1";
 input = input + "1";
+if (input.length>10) input = input.substring(0,10)
+document.getElementById('output').innerHTML = input;
 }
+
 function number2() {
-document.getElementById('output').innerHTML = input + "2";
+if (input.length>10) input = input.substring(0,10)
 input = input + "2";
+document.getElementById('output').innerHTML = input;
 }
+
 function number3() {
-document.getElementById('output').innerHTML = input + "3";
+if (input.length>10) input = input.substring(0,10)
 input = input + "3";
+document.getElementById('output').innerHTML = input;
 }
+
 function number4() {
-document.getElementById('output').innerHTML = input + "4";
+if (input.length>10) input = input.substring(0,10)
 input = input + "4";
+document.getElementById('output').innerHTML = input;
 }
+
 function number5() {
-document.getElementById('output').innerHTML = input + "5";
+if (input.length>10) input = input.substring(0,10)
 input = input + "5";
+document.getElementById('output').innerHTML = input;
 }
+
 function number6() {
-document.getElementById('output').innerHTML = input + "6";
+if (input.length>10) input = input.substring(0,10)
 input = input + "6";
+document.getElementById('output').innerHTML = input;
 }
+
 function number7() {
-document.getElementById('output').innerHTML = input + "7";
+if (input.length>10) input = input.substring(0,10)
 input = input + "7";
+document.getElementById('output').innerHTML = input;
 }
+
 function number8() {
-document.getElementById('output').innerHTML = input + "8";
+if (input.length>10) input = input.substring(0,10)
 input = input + "8";
+document.getElementById('output').innerHTML = input;
 }
+
 function number9() {
-document.getElementById('output').innerHTML = input + "9";
+if (input.length>10) input = input.substring(0,10)
 input = input + "9";
+document.getElementById('output').innerHTML = input;
 }
+
 function number0() {
-document.getElementById('output').innerHTML = input + "0";
+if (input.length>10) input = input.substring(0,10)
 input = input + "0";
+document.getElementById('output').innerHTML = input;
 }
+
 function dec() {
-document.getElementById('output').innerHTML = input + ".";
+if (input.length>10) input = input.substring(0,10)
 input = input + ".";
+document.getElementById('output').innerHTML = input;
 }
+
 function reset() {
   input = " ";
   document.getElementById('output').innerHTML = input;

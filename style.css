@@ -1,6 +1,7 @@
 html {
   background-image: url(images/new.gif);
   background-size: cover;
+  height: 100%;
 }
 
 .PageText {
@@ -31,26 +32,28 @@ button {
   font-weight: bold;
 }
 
-.num, .ops, #equals {
+button:hover {
+  background-color: blue;
+}
+
+.num, .ops, #equals, #reset {
   width: 40px;
   height: 25px;
   color: #fff;
   text-shadow: 1px 1px 1px #040F45;
+  background-color: #845ED7;
 }
 
-#reset {
-  height: 25px;
-  width: 95px;
-  margin-right: 117px;
-  background-color: #BEEC5C;
-  text-shadow: 1px 1px 1px #525354;
+
+#reset:hover {
+  background-color: blue;
 }
 
-.ops {
+.ops, #reset {
   background-color: #1ADAFB;
 }
 
-.num, #equals {
+#equals {
   background-color: #845ED7;
 }
 
@@ -78,4 +81,13 @@ button {
   font-family: "Source Code Pro", monospace;
   color: #1ADAFB;
   border-style: inset;
+}
+
+#zero {
+  height: 25px;
+  width: 94px;
+  background-color: #BEEC5C;
+  text-shadow: 1px 1px 1px #525354;
+  background-color: #845ED7;
+  color: #fff;
 }
