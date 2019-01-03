@@ -10,21 +10,26 @@
   </head>
 
   <body>
-    <div id="player">
+    <!--<div id="player">
       <embed src="tunes/real.mp3" autostart="true" loop="true"
   width="2" height="0">
   </embed>
-  </div>
+</div>-->
     <h1 class="PageText" align="center">P o c k e t // C a l c u l a t o r</h1>
 
 <center>
   <div id="calculator">
   <div class="output"><p align="right" id="output"></p></div>
   <br/>
+  <button onclick="reset()" class="ops" id="reset">AC</button>
+  <button onclick="dec()" class="ops" id="dec">.</button>
+  <button onclick="signSwitch()" class="ops">+/-</button>
+  <button onclick="percent" class="ops" id="percent">%</button>
+  <br/>
   <button onclick="number7()" class="num">7</button>
   <button onclick="number8()" class="num">8</button>
   <button onclick="number9()" class="num">9</button>
-  <button class="ops">+</button>
+  <button onclick="addition()" class="ops">+</button>
   <br/>
   <button onclick="number4()" class="num">4</button>
   <button onclick="number5()" class="num">5</button>
@@ -39,21 +44,9 @@
   <button onclick="number0()" class="num" id="zero">0</button>
   <button id="equals">=</button>
   <button class="ops">/</button>
-  <br/>
-  <center>
-  <button onclick="reset()" id="reset">AC</button>
-  <button onclick="dec()" class="ops">.</button>
-  <button onclick="signSwitch()" class="ops">+/-</button>
-  <button onclick="percent" class="ops" id="percent">%</button>
-  </center>
   </div>
 </center>
-<br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/>
 
-<button class="secret" onclick="window.open('https://www.youtube.com/watch?v=eSBybJGZoCU')">
-  By pressing down this special key<br/>It plays a little melody...
-</button>
 
 
   </body>
