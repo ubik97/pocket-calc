@@ -43,16 +43,12 @@ button:hover {
   background-color: blue;
 }
 
-.ops, #reset {
+.ops, #reset, #equals {
   background-color: #1ADAFB;
 }
 
 #reset {
   margin-left: -0.20;
-}
-
-#equals {
-  background-color: #845ED7;
 }
 
 .output {
@@ -84,11 +80,12 @@ button:hover {
 
 #zero {
   height: 40px;
-  width: 113px;
+  width: 115px;
   background-color: #BEEC5C;
   text-shadow: 1px 1px 1px #525354;
   background-color: #845ED7;
   color: #fff;
+  margin-left: -0.05px;
 }
 
 #calculator {

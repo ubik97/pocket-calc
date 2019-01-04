@@ -22,9 +22,9 @@
   <div class="output"><p align="right" id="output"></p></div>
   <br/>
   <button onclick="reset()" class="ops" id="reset">AC</button>
-  <button onclick="dec()" class="ops" id="dec">.</button>
   <button onclick="signSwitch()" class="ops">+/-</button>
   <button onclick="percent" class="ops" id="percent">%</button>
+  <button class="ops">/</button>
   <br/>
   <button onclick="number7()" class="num">7</button>
   <button onclick="number8()" class="num">8</button>
@@ -41,9 +41,11 @@
   <button onclick="number3()" class="num">3</button>
   <button class="ops">*</button>
   <br/>
+  <div id="p" aligh="left">
   <button onclick="number0()" class="num" id="zero">0</button>
+  <button onclick="dec()" class="num" id="dec">.</button>
   <button id="equals">=</button>
-  <button class="ops">/</button>
+  </div>
   </div>
 </center>
 
