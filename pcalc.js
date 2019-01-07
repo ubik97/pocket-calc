@@ -2,11 +2,11 @@ var input = "";
 var output;
 var p = document.getElementById('output')
 var digcount = input.length;
-var prevnum = 0;
+var prevnum;
 var optype;
-var sum = 0;
-var dif = 0;
-var status = "clean";
+var status;
+
+
 
 //OPERATIONS
 function addition() {
@@ -32,6 +32,17 @@ function division() {
   prevnum = input;
   input = "";
   optype = 4;
+}
+
+function percent() {
+  input = (Number(input) / 100);
+  document.getElementById('output').innerHTML = input;
+  status = "dirty";
+}
+
+function negate() {
+  input = (Number(input) * (-1))
+  document.getElementById('output').innerHTML = input;
 }
 
 
@@ -65,8 +76,6 @@ function equals() {
 //RESET
 function reset() {
   input = " ";
-  addnum = 0;
-  subnum = 0;
   document.getElementById('output').innerHTML = input;
 }
 
@@ -217,17 +226,21 @@ document.getElementById('output').innerHTML = input;
 }
 
 function number0() {
-  if (status != "clean") {
+  if (input = "0") {
     input = "0";
-    document.getElementById('output').innerHTML = input;
-    status = "clean";
   } else {
-  if (input.length>9) {
-    input = input + "0";
-    input = input.substring(0,10);
-  } else {
-    input = input + "0";
-  }
+    if (status != "clean") {
+      input = "0";
+      document.getElementById('output').innerHTML = input;
+      status = "clean";
+    } else {
+      if (input.length>9) {
+        input = input + "0";
+        input = input.substring(0,10);
+      } else {
+        input = input + "0";
+      }
+    }
 }
 document.getElementById('output').innerHTML = input;
 }
