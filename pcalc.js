@@ -1,46 +1,57 @@
 var input = "";
+var output;
 var p = document.getElementById('output')
 var digcount = input.length;
-var addnum = 0;
-var subnum = 0;
+var prevnum = 0;
 var optype;
 var sum = 0;
 var dif = 0;
 var status = "clean";
 
+//OPERATIONS
 function addition() {
-  addnum = Number(addnum) + Number(input);
+  prevnum = Number(input);
   input = "";
   optype = 1;
 
 }
 
 function subtraction() {
-  subnum = Number(subnum) - Number(input);
+  prevnum = Number(input);
   input = "";
   optype = 2;
 }
 
+
+//EQUALS
 function equals() {
+
   switch(optype) {
     case 1:
-      sum = eval(Number(input) + Number(addnum));
+      input = eval(Number(prevnum) + Number(input));
       status = "dirty";
-      document.getElementById('output').innerHTML = sum;
       break;
 
     case 2:
-      dif = eval(Number(subnum) - Number(input));
+      input = eval(Number(prevnum) - Number(input));
       status = "dirty";
-      document.getElementById('output').innerHTML = dif;
       break;
 
 
 
   }
+  document.getElementById('output').innerHTML = input;
 }
 
-            //BASIC KEYPAD INPUT FUNCTIONS
+//RESET
+function reset() {
+  input = " ";
+  addnum = 0;
+  subnum = 0;
+  document.getElementById('output').innerHTML = input;
+}
+
+//NUMBER INPUT
 function number1() {
   if (status != "clean") {
     input = "1";
@@ -50,7 +61,7 @@ function number1() {
     console.log(status);
   if (input.length>=9) {
   input = input + "1";
-  input = input.substring(0,9);
+  input = input.substring(0,10);
   } else {
     input = input + "1";
   }
@@ -66,7 +77,7 @@ function number2() {
   } else {
   if (input.length>9) {
     input = input + "2";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "2";
   }
@@ -82,7 +93,7 @@ function number3() {
   } else {
   if (input.length>9) {
     input = input + "3";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "3";
   }
@@ -98,7 +109,7 @@ function number4() {
   } else {
   if (input.length>9) {
     input = input + "4";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "4";
   }
@@ -114,7 +125,7 @@ function number5() {
   } else {
   if (input.length>9) {
     input = input + "5";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "5";
   }
@@ -130,7 +141,7 @@ function number6() {
   } else {
   if (input.length>9) {
     input = input + "6";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "6";
   }
@@ -146,7 +157,7 @@ function number7() {
   } else {
   if (input.length>9) {
     input = input + "7";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "7";
   }
@@ -162,7 +173,7 @@ function number8() {
   } else {
   if (input.length>9) {
     input = input + "8";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "8";
   }
@@ -178,7 +189,7 @@ function number9() {
   } else {
   if (input.length>9) {
     input = input + "9";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "9";
   }
@@ -194,7 +205,7 @@ function number0() {
   } else {
   if (input.length>9) {
     input = input + "0";
-    input = input.substring(0,9);
+    input = input.substring(0,10);
   } else {
     input = input + "0";
   }
@@ -203,14 +214,7 @@ document.getElementById('output').innerHTML = input;
 }
 
 function dec() {
-if (input.length>10) input = input.substring(0,10)
+if (input.length>9) input = input.substring(0,10)
 input = input + ".";
 document.getElementById('output').innerHTML = input;
-}
-
-function reset() {
-  input = " ";
-  addnum = 0;
-  subnum = 0;
-  document.getElementById('output').innerHTML = input;
 }
