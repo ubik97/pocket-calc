@@ -22,6 +22,18 @@ function subtraction() {
   optype = 2;
 }
 
+function multiplication() {
+  prevnum = Number(input);
+  input = "";
+  optype = 3;
+}
+
+function division() {
+  prevnum = input;
+  input = "";
+  optype = 4;
+}
+
 
 //EQUALS
 function equals() {
@@ -37,8 +49,15 @@ function equals() {
       status = "dirty";
       break;
 
+    case 3:
+      input = eval(Number(prevnum) * Number(input));
+      status = "dirty";
+      break;
 
-
+    case 4:
+      input = eval(Number(prevnum) / Number(input));
+      status = "dirty";
+      break;
   }
   document.getElementById('output').innerHTML = input;
 }
