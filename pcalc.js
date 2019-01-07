@@ -16,7 +16,7 @@ function addition() {
 }
 
 function subtraction() {
-  subnum = Number(input) - Number(subnum);
+  subnum = Number(subnum) - Number(input);
   input = "";
   optype = 2;
 }
