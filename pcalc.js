@@ -59,6 +59,8 @@ function equals() {
     case 1:
       prevnum = eval(Number(prevnum) + Number(input));
       status = "dirty";
+
+
       break;
 
     case 2:
@@ -75,6 +77,9 @@ function equals() {
       input = eval(Number(prevnum) / Number(input));
       status = "dirty";
       break;
+  }
+  if (chain=2) {
+    document.getElementById('output').innerHTML = (Number(prevnum) + Number(input));
   }
   document.getElementById('output').innerHTML = prevnum;
   optype = 0;
