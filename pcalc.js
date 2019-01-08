@@ -13,6 +13,7 @@ function addition() {
   prevnum = Number(input);
   input = "";
   optype = 1;
+  console.log(optype);
 
 }
 
@@ -20,6 +21,7 @@ function subtraction() {
   prevnum = Number(input);
   input = "";
   optype = 2;
+  console.log(optype)
 }
 
 function multiplication() {
@@ -29,7 +31,7 @@ function multiplication() {
 }
 
 function division() {
-  prevnum = input;
+  prevnum = Number(input);
   input = "";
   optype = 4;
 }
