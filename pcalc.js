@@ -5,23 +5,27 @@ var digcount = input.length;
 var prevnum;
 var optype;
 var status;
+var chain = 1;
 
 
 
 //OPERATIONS
 function addition() {
-  prevnum = Number(input);
-  input = "";
   optype = 1;
-  console.log(optype);
-
+  if (chain == 1) {
+    prevnum = Number(input);
+  } else {
+    equals();
+  }
+  chain = 2;
+  input = "";
 }
 
 function subtraction() {
   prevnum = Number(input);
   input = "";
   optype = 2;
-  console.log(optype)
+
 }
 
 function multiplication() {
@@ -53,7 +57,7 @@ function equals() {
 
   switch(optype) {
     case 1:
-      input = eval(Number(prevnum) + Number(input));
+      prevnum = eval(Number(prevnum) + Number(input));
       status = "dirty";
       break;
 
@@ -72,12 +76,14 @@ function equals() {
       status = "dirty";
       break;
   }
-  document.getElementById('output').innerHTML = input;
+  document.getElementById('output').innerHTML = prevnum;
+  optype = 0;
 }
 
 //RESET
 function reset() {
   input = " ";
+  chain = 1;
   document.getElementById('output').innerHTML = input;
 }
 
