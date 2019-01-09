@@ -59,22 +59,20 @@ function equals() {
     case 1:
       prevnum = eval(Number(prevnum) + Number(input));
       status = "dirty";
-
-
       break;
 
     case 2:
-      input = eval(Number(prevnum) - Number(input));
+      prevnum = eval(Number(prevnum) - Number(input));
       status = "dirty";
       break;
 
     case 3:
-      input = eval(Number(prevnum) * Number(input));
+      prevnum = eval(Number(prevnum) * Number(input));
       status = "dirty";
       break;
 
     case 4:
-      input = eval(Number(prevnum) / Number(input));
+      prevnum = eval(Number(prevnum) / Number(input));
       status = "dirty";
       break;
   }
