@@ -85,14 +85,18 @@ function equals() {
 
 //RESET
 function reset() {
-  input = " ";
+  input = "";
   chain = 1;
+  prevnum = "";
   document.getElementById('output').innerHTML = input;
 }
 
-function commas(){
+function commas() {
 
+  let arr = [];
+  arr.push((input).toString(10).split(""));
 
+  
 
 
 
@@ -116,6 +120,7 @@ function number1() {
     input = input + "1";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -132,6 +137,7 @@ function number2() {
     input = input + "2";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -148,6 +154,7 @@ function number3() {
     input = input + "3";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -164,6 +171,7 @@ function number4() {
     input = input + "4";
   }
   }
+  commas();
   document.getElementById('output').innerHTML = input;
   }
 
@@ -180,6 +188,7 @@ function number5() {
     input = input + "5";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -196,6 +205,7 @@ function number6() {
     input = input + "6";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -212,6 +222,7 @@ function number7() {
     input = input + "7";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -228,6 +239,7 @@ function number8() {
     input = input + "8";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -244,6 +256,7 @@ function number9() {
     input = input + "9";
   }
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
@@ -267,6 +280,7 @@ function number0() {
     }
 
 }
+commas();
 document.getElementById('output').innerHTML = input;
 }
 
