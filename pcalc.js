@@ -79,7 +79,7 @@ function equals() {
   if (chain=2) {
     document.getElementById('output').innerHTML = (Number(prevnum) + Number(input));
   }
-  document.getElementById('output').innerHTML = prevnum;
+  document.getElementById('output').innerHTML = String(prevnum).substring(0,10);
   optype = 0;
 }
 
@@ -88,6 +88,17 @@ function reset() {
   input = " ";
   chain = 1;
   document.getElementById('output').innerHTML = input;
+}
+
+function commas(){
+
+
+
+
+
+
+
+
 }
 
 //NUMBER INPUT
@@ -240,11 +251,13 @@ function number0() {
   if (input = "0") {
     input = "0";
   } else {
-    if (status != "clean") {
+
+    if (status = "dirty") {
       input = "0";
       document.getElementById('output').innerHTML = input;
       status = "clean";
     } else {
+
       if (input.length>9) {
         input = input + "0";
         input = input.substring(0,10);
@@ -252,6 +265,7 @@ function number0() {
         input = input + "0";
       }
     }
+
 }
 document.getElementById('output').innerHTML = input;
 }
