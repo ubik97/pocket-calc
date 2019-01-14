@@ -96,35 +96,36 @@ function commas() {
   let arr = [];
   arr.push((input).toString(10).split(""));
 
-  
-
-
-
-
-
-
 }
 
 //NUMBER INPUT
 function number1() {
+  if (input = "0") {
+    input = "1";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "1";
     document.getElementById('output').innerHTML = input;
     status = "clean";
   } else {
-    console.log(status);
-  if (input.length>=9) {
-  input = input + "1";
-  input = input.substring(0,10);
+  if (input.length>9) {
+    input = input + "1";
+    input = input.substring(0,10);
   } else {
     input = input + "1";
   }
-}
-commas();
-document.getElementById('output').innerHTML = input;
-}
+  }
+  commas();
+  document.getElementById('output').innerHTML = input;
+  }
+  }
 
 function number2() {
+  if (input = "0") {
+    input = "2";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "2";
     document.getElementById('output').innerHTML = input;
@@ -140,8 +141,12 @@ function number2() {
 commas();
 document.getElementById('output').innerHTML = input;
 }
-
+}
 function number3() {
+  if (input = "0") {
+    input = "3";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "3";
     document.getElementById('output').innerHTML = input;
@@ -153,12 +158,17 @@ function number3() {
   } else {
     input = input + "3";
   }
-}
-commas();
-document.getElementById('output').innerHTML = input;
-}
+  }
+  commas();
+  document.getElementById('output').innerHTML = input;
+  }
+  }
 
 function number4() {
+  if (input = "0") {
+    input = "4";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "4";
     document.getElementById('output').innerHTML = input;
@@ -170,12 +180,17 @@ function number4() {
   } else {
     input = input + "4";
   }
-  }
-  commas();
-  document.getElementById('output').innerHTML = input;
-  }
+}
+commas();
+document.getElementById('output').innerHTML = input;
+}
+}
 
 function number5() {
+  if (input = "0") {
+    input = "5";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "5";
     document.getElementById('output').innerHTML = input;
@@ -191,8 +206,13 @@ function number5() {
 commas();
 document.getElementById('output').innerHTML = input;
 }
+}
 
 function number6() {
+  if (input = "0") {
+    input = "6";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "6";
     document.getElementById('output').innerHTML = input;
@@ -208,8 +228,12 @@ function number6() {
 commas();
 document.getElementById('output').innerHTML = input;
 }
-
+}
 function number7() {
+  if (input = "0") {
+    input = "7";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "7";
     document.getElementById('output').innerHTML = input;
@@ -225,8 +249,13 @@ function number7() {
 commas();
 document.getElementById('output').innerHTML = input;
 }
+}
 
 function number8() {
+  if (input = "0") {
+    input = "8";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "8";
     document.getElementById('output').innerHTML = input;
@@ -242,8 +271,13 @@ function number8() {
 commas();
 document.getElementById('output').innerHTML = input;
 }
+}
 
 function number9() {
+  if (input = "0") {
+    input = "9";
+    document.getElementById('output').innerHTML = input;
+  } else {
   if (status != "clean") {
     input = "9";
     document.getElementById('output').innerHTML = input;
@@ -259,30 +293,32 @@ function number9() {
 commas();
 document.getElementById('output').innerHTML = input;
 }
+}
+
+
 
 function number0() {
-  if (input = "0") {
+  if (input != "0") {
+  if (status != "clean") {
     input = "0";
+    document.getElementById('output').innerHTML = input;
+    status = "clean";
   } else {
-
-    if (status = "dirty") {
-      input = "0";
+  if (input.length>9) {
+    input = input + "0";
+    input = input.substring(0,10);
+  } else {
+    input = input + "0";
+  }
+  }
+  document.getElementById('output').innerHTML = input;
+}
+  else {
+    if (input = "0") {
       document.getElementById('output').innerHTML = input;
-      status = "clean";
-    } else {
-
-      if (input.length>9) {
-        input = input + "0";
-        input = input.substring(0,10);
-      } else {
-        input = input + "0";
-      }
     }
-
-}
-commas();
-document.getElementById('output').innerHTML = input;
-}
+  }
+  }
 
 function dec() {
 if (input.length>9) input = input.substring(0,10)
