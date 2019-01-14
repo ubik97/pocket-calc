@@ -96,6 +96,9 @@ function commas() {
   let arr = [];
   arr.push((input).toString(10).split(""));
 
+
+
+
 }
 
 //NUMBER INPUT
@@ -254,23 +257,28 @@ document.getElementById('output').innerHTML = input;
 function number8() {
   if (input = "0") {
     input = "8";
+    console.log(input + "one");
     document.getElementById('output').innerHTML = input;
   } else {
   if (status != "clean") {
     input = "8";
     document.getElementById('output').innerHTML = input;
     status = "clean";
-  } else {
+    console.log(input + "two");
+  }
+  
   if (input.length>9) {
     input = input + "8";
     input = input.substring(0,10);
+    console.log(input + "three");
   } else {
     input = input + "8";
+    document.getElementById('output').innerHTML = input;
+    console.log(input + "four");
   }
-}
 commas();
-document.getElementById('output').innerHTML = input;
 }
+console.log(input + "five");
 }
 
 function number9() {
@@ -288,10 +296,10 @@ function number9() {
     input = input.substring(0,10);
   } else {
     input = input + "9";
+    document.getElementById('output').innerHTML = input;
   }
 }
 commas();
-document.getElementById('output').innerHTML = input;
 }
 }
 
