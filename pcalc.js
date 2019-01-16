@@ -8,7 +8,6 @@ var status;
 var chain = 1;
 var string = "";
 
-//leghoiqwehgqiwebfw  leghoiqwehgqiwebfwewgb
 
 //OPERATIONS
 function addition() {
@@ -98,100 +97,19 @@ function reset() {
   document.getElementById('output').innerHTML = 0;
 }
 
-function comma(){
-  if(Number(value) >= 0){
-    ignoreMinus = 0;
-  }else if(Number(value) < 0){
-    ignoreMinus = 1;
-  }
-  if(ignoreMinus == 0){
-    if(box.length > 11) box = box.substring(0, 11);
-  }else{
-    if(box.length > 12) box = box.substring(0, 12);
-  }
-  let h = box.split("");
-  let h1 = [];
-  let h2 = [];
-  let u = 0;
-  let dec = 0;
-  let neg = 0;
 
-  for(let j = box.length; j > 0; j--){
-    if(h[j] === ","){
-      h.splice(j, 1);
-    }
-  }
-  box = h.join("");
-  for(let j = box.length; j > 0; j--){
-    if(h[j-1] === "."){
-      dec = 1;
-    }
-  }
-  for(let j = 0; j <= presCount; j++){
-    if(h[j] === "-"){
-      h.splice(j, 1);
-      neg = 1;
-      box = h.join("");
-    }
-  }
-  if(dec == 1){
-    h1 = box.split(".")
-    let cbox = h1[0];
-    let vbox = h1[1];
-    h2 = cbox.split("");
-    for(let i = cbox.length; i > 3; i=i-3){
-      h2.splice((-3-(4*u)), 0, ",");
-      u++;
-    }
-    cbox = h2.join("");
-    box = cbox + "." + vbox;
-  }else{
-    cbox = box;
-    for(let i = box.length; i > 3; i=i-3){
-      h.splice((-3-(4*u)), 0, ",");
-      u++;
-    }
-    if(presCount == 1){
-      for(let j = box.length; j > 0; j--){
-        if(h[j] === ","){
-          h.splice(j, 1);
-        }
-      }
-    }
-    box = h.join("");
-    }
-    if(neg == 1){
-    box = "-" + box;
-  }
-}
 
-function num(x){
-  checkReplace();
-  box = box + x;
-  value = value + x;
-  comma();
-  document.getElementById("output").innerHTML = box;
-}
-
-function num0(){
-  checkReplace();
-  if(box == "0" || box == "-"){
-  box = 0;
-  }else{
-  box = box + "0";
-  value = value + "0";
-  }
-  comma();
-  document.getElementById("output").innerHTML = box;
-}
 
 //NUMBER INPUT
 function number1() {
 
   if (status != "clean") {
+    let i = 1;
       if (chain = 2) {
         string = string + "1"
+      if (i<10) {
         input = input + "1";
+      }
       } else {
     input = "1";
     string = "1";
@@ -202,13 +120,16 @@ function number1() {
   if (input.length>=9) {
   input = input + "1";
   input = input.substring(0,10);
+
+
   } else {
     input = input + "1";
     string = string + "1";
   }
 }
+i++;
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number2() {
@@ -232,7 +153,7 @@ function number2() {
   }
 }
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number3() {
@@ -256,7 +177,7 @@ function number3() {
   }
   }
   console.log(string);
-  document.getElementById('output').innerHTML = input;
+  document.getElementById('output').innerHTML = input.substring(0,10);
   }
 
 function number4() {
@@ -280,7 +201,7 @@ function number4() {
   }
 }
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number5() {
@@ -304,7 +225,7 @@ function number5() {
   }
 }
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number6() {
@@ -328,7 +249,7 @@ function number6() {
   }
 }
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number7() {
@@ -352,7 +273,7 @@ function number7() {
   }
 }
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number8() {
@@ -376,7 +297,7 @@ function number8() {
   }
 }
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number9() {
@@ -400,7 +321,7 @@ function number9() {
   }
 }
 console.log(string);
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number0() {
@@ -423,7 +344,7 @@ function number0() {
     }
 
 }
-document.getElementById('output').innerHTML = input;
+document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function dec() {
