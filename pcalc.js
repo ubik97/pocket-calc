@@ -9,6 +9,7 @@ var chain = 1;
 
 
 
+
 //OPERATIONS
 function addition() {
   optype = 1;
@@ -41,7 +42,7 @@ function division() {
 }
 
 function percent() {
-  input = (Number(input) / 100);
+  input = (Number(input) / 100).toFixed(2);
   document.getElementById('output').innerHTML = input;
   status = "dirty";
 }
@@ -257,16 +258,22 @@ document.getElementById('output').innerHTML = input;
 function number8() {
   if (input = "0") {
     input = "8";
+    console.log(input + "zero");
+    document.getElementById('output').innerHTML = input;
+  }
+  if (input = "") {
+    input = "8";
     console.log(input + "one");
     document.getElementById('output').innerHTML = input;
   } else {
+
   if (status != "clean") {
     input = "8";
     document.getElementById('output').innerHTML = input;
     status = "clean";
     console.log(input + "two");
   }
-  
+
   if (input.length>9) {
     input = input + "8";
     input = input.substring(0,10);
@@ -302,8 +309,6 @@ function number9() {
 commas();
 }
 }
-
-
 
 function number0() {
   if (input != "0") {
