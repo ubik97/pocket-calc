@@ -7,6 +7,8 @@ var optype;
 var status;
 var chain = 1;
 var string = "";
+var opdouble = 1;
+
 
 
 //OPERATIONS
@@ -14,8 +16,12 @@ function addition() {
   optype = 1;
   chain = 2;
   input = "";
+  if (opdouble = 1) {
   string = string + "+";
+} else {
+  opdouble = 2;
   console.log(string);
+}
 }
 
 function subtraction() {
@@ -82,11 +88,10 @@ function equals() {
     status = "dirty";
       break;
   }
-  if (chain=2) {
-    document.getElementById('output').innerHTML = (Number(prevnum) + Number(input));
-  }
   document.getElementById('output').innerHTML = String(output).substring(0,10);
   optype = 0;
+  opdouble = 1;
+  string = String(output);
 }
 
 //RESET
@@ -99,17 +104,12 @@ function reset() {
 
 
 
-
 //NUMBER INPUT
 function number1() {
-
   if (status != "clean") {
-    let i = 1;
       if (chain = 2) {
-        string = string + "1"
-      if (i<10) {
+        string = string + "1";
         input = input + "1";
-      }
       } else {
     input = "1";
     string = "1";
@@ -120,17 +120,15 @@ function number1() {
   if (input.length>=9) {
   input = input + "1";
   input = input.substring(0,10);
-
-
   } else {
     input = input + "1";
     string = string + "1";
   }
-}
-i++;
-console.log(string);
-document.getElementById('output').innerHTML = input.substring(0,10);
-}
+  }
+  commas();
+  console.log(string);
+  document.getElementById('output').innerHTML = input.substring(0,10);
+  }
 
 function number2() {
   if (status != "clean") {
@@ -152,7 +150,9 @@ function number2() {
     string = string + "2";
   }
 }
-console.log(string);
+input = String(input);
+input = input.toLocaleString();
+console.log(input);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
