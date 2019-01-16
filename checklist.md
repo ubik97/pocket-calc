@@ -2,8 +2,7 @@
 ### Unfulfilled Requirements
 - Scientific notation
 - Comma delimiting
-- Decimal rounding
-- Default value
+
 
 
 
