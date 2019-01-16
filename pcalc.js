@@ -8,7 +8,7 @@ var status;
 var chain = 1;
 var string = "";
 
-
+//leghoiqwehgqiwebfw  leghoiqwehgqiwebfwewgb
 
 //OPERATIONS
 function addition() {
@@ -431,4 +431,3 @@ if (input.length>9) input = input.substring(0,10)
 input = input + ".";
 document.getElementById('output').innerHTML = input;
 }
-
