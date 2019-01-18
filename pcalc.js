@@ -51,6 +51,7 @@ function division() {
 
 function percent() {
   input = (Number(input) / 100);
+  string = String(Number(input) / 100);
   document.getElementById('output').innerHTML = input;
   status = "dirty";
 }
@@ -125,7 +126,6 @@ function number1() {
     string = string + "1";
   }
   }
-  commas();
   console.log(string);
   document.getElementById('output').innerHTML = input.substring(0,10);
   }
@@ -248,8 +248,8 @@ function number6() {
     string = string + "6";
   }
 }
-console.log(string);
-document.getElementById('output').innerHTML = input.substring(0,10);
+input = input.substring(0,10);
+document.getElementById('output').innerHTML = input;
 }
 
 function number7() {
