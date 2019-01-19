@@ -8,8 +8,31 @@ var status;
 var chain = 1;
 var string = "";
 var opdouble = 1;
+var expArr = [];
+var mostRecent;
+
+function array() {
+  expArr = string.split("");
+  let replace;
+
+  if (expArr[expArr.length - 1] === "+" || expArr[expArr.length - 1] === "-" || expArr[expArr.length - 1] === "*" || expArr[expArr.length - 1] === "/") {
+    if (expArr[expArr.length - 2] === "+" || expArr[expArr.length - 2] === "-" || expArr[expArr.length - 2] === "*" || expArr[expArr.length - 2] === "/") {
+      replace = expArr[expArr.length - 1];
+      expArr.pop(expArr[expArr.length - 1]);
+      expArr.pop(expArr[expArr.length - 2]);
+      expArr.push(replace);
+    }
+    console.log(expArr);
+    string = expArr.join("");
+    console.log(string);
+  }
 
 
+
+console.log(expArr[expArr.length - 1]);
+
+console.log(expArr);
+}
 
 //OPERATIONS
 function addition() {
@@ -20,8 +43,10 @@ function addition() {
   string = string + "+";
 } else {
   opdouble = 2;
-  console.log(string);
+  mostRecent = "+";
 }
+array();
+console.log(string);
 }
 
 function subtraction() {
@@ -30,7 +55,8 @@ function subtraction() {
   input = "";
   string = string + "-";
   console.log(string);
-
+  mostRecent = "-";
+  array();
 }
 
 function multiplication() {
@@ -39,6 +65,8 @@ function multiplication() {
   input = "";
   string = string + "*";
   console.log(string);
+  mostRecent = "*";
+  array();
 }
 
 function division() {
@@ -47,6 +75,8 @@ function division() {
   input = "";
   string = string + "/";
   console.log(string);
+  mostRecent = "/";
+  array();
 }
 
 function percent() {
@@ -66,8 +96,12 @@ function equals() {
 
   switch(optype) {
     case 1:
-      output = eval(string).toLocaleString();
-      console.log(output);
+      ouput = eval(string);
+      if (eval(string) > 999999999) {
+        output = String(output.toExponential());
+      } else {
+        output = eval(string).toLocaleString();
+      }
       status = "dirty";
       break;
 
@@ -89,7 +123,7 @@ function equals() {
     status = "dirty";
       break;
   }
-  document.getElementById('output').innerHTML = String(output).substring(0,10);
+  document.getElementById('output').innerHTML = output;
   optype = 0;
   opdouble = 1;
   string = String(output);
@@ -97,9 +131,11 @@ function equals() {
 
 //RESET
 function reset() {
-  input = " "
+  input = " ";
   string = "";
+  expArr = [];
   chain = 1;
+  status = "clean";
   document.getElementById('output').innerHTML = 0;
 }
 
@@ -114,6 +150,7 @@ function number1() {
       } else {
     input = "1";
     string = "1";
+    array();
     document.getElementById('output').innerHTML = input;
     status = "clean";
   }} else {
@@ -124,6 +161,7 @@ function number1() {
   } else {
     input = input + "1";
     string = string + "1";
+    array();
   }
   }
   console.log(string);
@@ -150,8 +188,7 @@ function number2() {
     string = string + "2";
   }
 }
-input = String(input);
-input = input.toLocaleString();
+array();
 console.log(input);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
@@ -176,6 +213,7 @@ function number3() {
     string = string + "3";
   }
   }
+  array();
   console.log(string);
   document.getElementById('output').innerHTML = input.substring(0,10);
   }
@@ -200,6 +238,7 @@ function number4() {
     string = string + "4";
   }
 }
+array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
@@ -224,6 +263,7 @@ function number5() {
     string = string + "5";
   }
 }
+array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
@@ -248,6 +288,7 @@ function number6() {
     string = string + "6";
   }
 }
+array();
 input = input.substring(0,10);
 document.getElementById('output').innerHTML = input;
 }
@@ -272,6 +313,7 @@ function number7() {
     string = string + "7";
   }
 }
+array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
@@ -296,6 +338,7 @@ function number8() {
     string = string + "8";
   }
 }
+array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
@@ -320,31 +363,39 @@ function number9() {
     string = string + "9";
   }
 }
+array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number0() {
-  if (input = "0") {
-    input = "0";
+  if (input = "") {
+    input = "";
   } else {
 
-    if (status = "dirty") {
+    if (status != "clean") {
+        if (chain = 2) {
+          string = string + "0";
+          input = input + "0";
+        } else {
       input = "0";
+      string = "0";
       document.getElementById('output').innerHTML = input;
       status = "clean";
+    }} else {
+      console.log(status);
+    if (input.length>=9) {
+    input = input + "0";
+    input = input.substring(0,10);
     } else {
-
-      if (input.length>9) {
-        input = input + "0";
-        input = input.substring(0,10);
-      } else {
-        input = input + "0";
-      }
+      input = input + "0";
+      string = string + "0";
     }
-
-}
-document.getElementById('output').innerHTML = input.substring(0,10);
+  }
+  array();
+  console.log(string);
+  document.getElementById('output').innerHTML = input.substring(0,10);
+  }
 }
 
 function dec() {
