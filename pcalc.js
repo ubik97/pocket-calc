@@ -26,12 +26,16 @@ function array() {
     string = expArr.join("");
     console.log(string);
   }
-
-
-
 console.log(expArr[expArr.length - 1]);
-
 console.log(expArr);
+}
+
+function dec() {
+document.getElementById('output').innerHTML = 0
+
+if (input.length>9) input = input.substring(0,10)
+input = input + ".";
+document.getElementById('output').innerHTML = input;
 }
 
 //OPERATIONS
@@ -96,9 +100,11 @@ function equals() {
 
   switch(optype) {
     case 1:
-      ouput = eval(string);
-      if (eval(string) > 999999999) {
-        output = String(output.toExponential());
+      output = eval(string);
+      console.log(output);
+
+      if (Number(output) > 999999999) {
+        output = String(output.toExponential(3));
       } else {
         output = eval(string).toLocaleString();
       }
@@ -106,22 +112,40 @@ function equals() {
       break;
 
     case 2:
-    output = eval(string).toLocaleString();
+    output = eval(string);
     console.log(output);
+
+    if (Number(output) > 999999999) {
+      output = String(output.toExponential(3));
+    } else {
+      output = eval(string).toLocaleString();
+    }
     status = "dirty";
-      break;
+    break;
 
     case 3:
-    output = eval(string).toLocaleString();
+    output = eval(string);
     console.log(output);
+
+    if (Number(output) > 999999999) {
+      output = String(output.toExponential(3));
+    } else {
+      output = eval(string).toLocaleString();
+    }
     status = "dirty";
-      break;
+    break;
 
     case 4:
-    output = eval(string).toLocaleString();
+    output = eval(string);
     console.log(output);
+
+    if (Number(output) > 999999999) {
+      output = String(output.toExponential(3));
+    } else {
+      output = eval(string).toLocaleString();
+    }
     status = "dirty";
-      break;
+    break;
   }
   document.getElementById('output').innerHTML = output;
   optype = 0;
@@ -136,6 +160,7 @@ function reset() {
   expArr = [];
   chain = 1;
   status = "clean";
+  output = "";
   document.getElementById('output').innerHTML = 0;
 }
 
@@ -369,37 +394,36 @@ document.getElementById('output').innerHTML = input.substring(0,10);
 }
 
 function number0() {
-  if (input = "") {
-    input = "";
-  } else {
+  let repeat;
 
-    if (status != "clean") {
-        if (chain = 2) {
-          string = string + "0";
-          input = input + "0";
-        } else {
-      input = "0";
-      string = "0";
-      document.getElementById('output').innerHTML = input;
-      status = "clean";
-    }} else {
-      console.log(status);
-    if (input.length>=9) {
-    input = input + "0";
-    input = input.substring(0,10);
-    } else {
-      input = input + "0";
-      string = string + "0";
-    }
+  if (document.getElementById('output').innerHTML === "0" || document.getElementById('output').innerHTML === 0) {
+    reset();
+    repeat = "no";
   }
-  array();
-  console.log(string);
-  document.getElementById('output').innerHTML = input.substring(0,10);
+
+if (repeat = "yes") {
+  if (status != "clean") {
+      if (chain = 2) {
+        string = string + "0";
+        input = input + "0";
+      } else {
+    input = "0";
+    string = "0";
+    document.getElementById('output').innerHTML = input;
+    status = "clean";
+  }} else {
+    console.log(status);
+  if (input.length>=9) {
+  input = input + "0";
+  input = input.substring(0,10);
+  } else {
+    input = input + "0";
+    string = string + "0";
   }
 }
-
-function dec() {
-if (input.length>9) input = input.substring(0,10)
-input = input + ".";
-document.getElementById('output').innerHTML = input;
+array();
+console.log(string);
+document.getElementById('output').innerHTML = input.substring(0,10);
+}
+repeat = "yes";
 }
