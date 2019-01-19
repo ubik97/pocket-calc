@@ -31,10 +31,19 @@ console.log(expArr);
 }
 
 function dec() {
-document.getElementById('output').innerHTML = 0
+if (document.getElementById('output').innerHTML === 0 || document.getElementById('output').innerHTML === "0") {
+  input = input + "0.";
+  string = string + "0.";
+  array();
+} else {
 
-if (input.length>9) input = input.substring(0,10)
-input = input + ".";
+
+    if (input.length>9) {
+      input = input + ".";
+      input = input.substring(0,10)
+  }
+}
+
 document.getElementById('output').innerHTML = input;
 }
 
@@ -100,11 +109,9 @@ function equals() {
 
   switch(optype) {
     case 1:
-      output = eval(string);
-      console.log(output);
-
-      if (Number(output) > 999999999) {
-        output = String(output.toExponential(3));
+      ouput = eval(string);
+      if (eval(string) > 999999999) {
+        output = String(output.toExponential());
       } else {
         output = eval(string).toLocaleString();
       }
@@ -116,7 +123,7 @@ function equals() {
     console.log(output);
 
     if (Number(output) > 999999999) {
-      output = String(output.toExponential(3));
+      output = String(output.toExponential(2));
     } else {
       output = eval(string).toLocaleString();
     }
@@ -128,7 +135,7 @@ function equals() {
     console.log(output);
 
     if (Number(output) > 999999999) {
-      output = String(output.toExponential(3));
+      output = String(output.toExponential(2));
     } else {
       output = eval(string).toLocaleString();
     }
@@ -140,7 +147,7 @@ function equals() {
     console.log(output);
 
     if (Number(output) > 999999999) {
-      output = String(output.toExponential(3));
+      output = String(output.toExponential(2));
     } else {
       output = eval(string).toLocaleString();
     }
@@ -425,5 +432,4 @@ array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
 }
-repeat = "yes";
 }
