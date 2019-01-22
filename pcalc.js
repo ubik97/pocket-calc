@@ -9,11 +9,11 @@ var chain = 1;
 var string = "";
 var opdouble = 1;
 var expArr = [];
-var mostRecent;
+
 
 
 function sciNot() {
-
+  output = output.toExponential();
 }
 
 function array() {
@@ -113,50 +113,34 @@ function equals() {
 
   switch(optype) {
     case 1:
-      ouput = eval(string);
-      if (eval(string) > 999999999) {
-        output = String(output.toExponential());
-      } else {
-        output = eval(string).toLocaleString();
-      }
+      output = eval(string);
+      output = eval(string).toLocaleString();
       status = "dirty";
       break;
 
     case 2:
     output = eval(string);
     console.log(output);
-
-    if (Number(output) > 999999999) {
-      output = String(output.toExponential(2));
-    } else {
-      output = eval(string).toLocaleString();
-    }
+    output = eval(string).toLocaleString();
     status = "dirty";
     break;
 
     case 3:
     output = eval(string);
     console.log(output);
-
-    if (Number(output) > 999999999) {
-      output = String(output.toExponential(2));
-    } else {
-      output = eval(string).toLocaleString();
-    }
+    output = eval(string).toLocaleString();
     status = "dirty";
     break;
 
     case 4:
     output = eval(string);
     console.log(output);
-
-    if (Number(output) > 999999999) {
-      output = String(output.toExponential(2));
-    } else {
-      output = eval(string).toLocaleString();
-    }
+    output = eval(string).toLocaleString();
     status = "dirty";
     break;
+  }
+  if (Number(output) > 999999999 || Number(output) < 0.0000001) {
+    sciNot();
   }
   document.getElementById('output').innerHTML = output;
   optype = 0;
