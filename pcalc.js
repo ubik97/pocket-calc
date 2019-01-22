@@ -11,6 +11,7 @@ var opdouble = 1;
 var expArr = [];
 var mostRecent;
 
+
 function array() {
   expArr = string.split("");
   let replace;
@@ -34,17 +35,14 @@ function dec() {
 if (document.getElementById('output').innerHTML === 0 || document.getElementById('output').innerHTML === "0") {
   input = input + "0.";
   string = string + "0.";
-  array();
 } else {
-
-
-    if (input.length>9) {
       input = input + ".";
       input = input.substring(0,10)
+      string = string + ".";
   }
-}
-
+array();
 document.getElementById('output').innerHTML = input;
+document.getElementById('dec').disabled = true;
 }
 
 //OPERATIONS
@@ -97,11 +95,13 @@ function percent() {
   string = String(Number(input) / 100);
   document.getElementById('output').innerHTML = input;
   status = "dirty";
+  string = String(input);
 }
 
 function negate() {
   input = (Number(input) * (-1))
   document.getElementById('output').innerHTML = input;
+  string = String(input);
 }
 
 //EQUALS
@@ -169,6 +169,8 @@ function reset() {
   status = "clean";
   output = "";
   document.getElementById('output').innerHTML = 0;
+  document.getElementById('zero').disabled = true;
+  document.getElementById('dec').disabled = false;
 }
 
 
@@ -196,6 +198,7 @@ function number1() {
     array();
   }
   }
+  document.getElementById('zero').disabled = false;
   console.log(string);
   document.getElementById('output').innerHTML = input.substring(0,10);
   }
@@ -223,6 +226,7 @@ function number2() {
 array();
 console.log(input);
 document.getElementById('output').innerHTML = input.substring(0,10);
+document.getElementById('zero').disabled = false;
 }
 
 function number3() {
@@ -248,6 +252,7 @@ function number3() {
   array();
   console.log(string);
   document.getElementById('output').innerHTML = input.substring(0,10);
+  document.getElementById('zero').disabled = false;
   }
 
 function number4() {
@@ -273,6 +278,7 @@ function number4() {
 array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
+document.getElementById('zero').disabled = false;
 }
 
 function number5() {
@@ -298,6 +304,7 @@ function number5() {
 array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
+document.getElementById('zero').disabled = false;
 }
 
 function number6() {
@@ -323,6 +330,7 @@ function number6() {
 array();
 input = input.substring(0,10);
 document.getElementById('output').innerHTML = input;
+document.getElementById('zero').disabled = false;
 }
 
 function number7() {
@@ -348,6 +356,7 @@ function number7() {
 array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
+document.getElementById('zero').disabled = false;
 }
 
 function number8() {
@@ -373,6 +382,7 @@ function number8() {
 array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
+document.getElementById('zero').disabled = false;
 }
 
 function number9() {
@@ -398,6 +408,7 @@ function number9() {
 array();
 console.log(string);
 document.getElementById('output').innerHTML = input.substring(0,10);
+document.getElementById('zero').disabled = false;
 }
 
 function number0() {
