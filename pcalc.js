@@ -12,6 +12,10 @@ var expArr = [];
 var mostRecent;
 
 
+function sciNot() {
+
+}
+
 function array() {
   expArr = string.split("");
   let replace;
